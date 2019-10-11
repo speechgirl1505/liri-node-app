@@ -8,13 +8,16 @@ var spotify = new Spotify(keys.spotify);
 
 var fs = require("fs");
 
+
 // //THIS IS BANDS======================================================================================================================
 // // * `concert-this`
-// // node liri.js concert-this <artist/band name here>
-function itsShowTime() {
-    var artistName = process.argv.slice(3).join("+");
+function itsShowTime(artistName) {
+  //find a way to add escape character "\" before symbols
+    // var artistName = artistName.slice().join("+");
     var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
 
+    console.log(queryUrl);
+    console.log(artistName);
 
 
     axios.get(queryUrl).then(
@@ -36,31 +39,42 @@ function itsShowTime() {
 };
 // //THIS IS SPOTIFY====================================================================================================================
 // // * `spotify-this-song`
-// // node liri.js spotify-this-song '<song name here>'
-function playThatFunkyMusic() {
+function playThatFunkyMusic(songName) {
   // console.log("user chose spotify this")
-  var songName = process.argv.slice(3)
+  // var songName = process.argv.slice(3)
   spotify
-  .search({ type: 'track', query: songName })
+  .search({ type: 'track', query: songName})
   .then(function(response) {
-    console.log(
-      `
-      Artist(s): ${response.tracks.items[0].album.artists[0].name}
-      Song Name: ${response.tracks.items[0].name}
-      Preview Link: ${response.tracks.items[0].preview_url}
-      Album: ${response.tracks.items[0].album.name}
-      `
-      );
+
+    response.tracks.items.forEach(function(song) {
+      console.log(
+        `
+        Artist(s): ${song.album.artists[0].name}
+        Song Name: ${song.name}
+        Preview Link: ${song.preview_url}
+        Album: ${song.album.name}
+        `
+        );
+    });
+
+    // console.log(
+    //   `
+    //   Artist(s): ${response.tracks.items[0].album.artists[0].name}
+    //   Song Name: ${response.tracks.items[0].name}
+    //   Preview Link: ${response.tracks.items[0].preview_url}
+    //   Album: ${response.tracks.items[0].album.name}
+    //   `
+    //   );
   })
   .catch(function(err) {
     console.log(err);
   });
 }
-
 //THIS IS OMDB=======================================================================================================================
-function action() {
 
-var movieName = process.argv.slice(3).join("+")
+function action(movieName) {
+
+// var movieName = movieName.slice(3).join("+")
 // Then run a request with axios to the OMDB API with the movie specified
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
@@ -87,6 +101,7 @@ axios.get(queryUrl).then(
 
 };
 // THIS IS do-what-it-says=========================================================================================================
+// do-what-it-says
 function doWhatItSays(){
 console.log('do what it says is called')
 fs.readFile("random.txt", "utf8", function(error, data) {
@@ -94,43 +109,24 @@ fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
     }
-    // console.log(data);
     var dataArr = data.split(",");
-      console.log(dataArr);
-      
-  var songName = dataArr[1]
-  spotify
-  .search({ type: 'track', query: songName })
-  .then(function(response) {
-
-    console.log(
-      `
-      Artist(s): ${response.tracks.items[0].album.artists[0].name}
-      Song Name: ${response.tracks.items[0].name}
-      Preview Link: ${response.tracks.items[0].preview_url}
-      Album: ${response.tracks.items[0].album.name}
-      `
-      );
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
-  });
+    console.log(dataArr);
+    doWhatISay(dataArr[0],dataArr[1]);
+});
 }
-// node liri.js do-what-it-says
 
-
-switch (process.argv[2]) {
+function doWhatISay(method,item){
+switch (method) {
     case "concert-this":
-      itsShowTime();
+      itsShowTime(item);
       break;
     
     case "spotify-this-song":
-      playThatFunkyMusic();
+      playThatFunkyMusic(item);
       break;
     
     case "movie-this":
-      action()
+      action(item)
       break;
     
     case "do-what-it-says":
@@ -146,4 +142,7 @@ switch (process.argv[2]) {
       do-what-it-says
       `)
     }
-    // node liri.js movie-this super troopers
+}
+
+var whatDoYouWant = process.argv.slice(3).join(" ");
+doWhatISay(process.argv[2],whatDoYouWant);
