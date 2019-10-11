@@ -12,25 +12,28 @@ var fs = require("fs");
 // // * `concert-this`
 // // node liri.js concert-this <artist/band name here>
 function itsShowTime() {
-  var artistName = process.argv.slice(3)
-  var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
+    var artistName = process.argv.slice(3).join("+");
+    var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
 
-  
+
 
     axios.get(queryUrl).then(
     function(response) {
     var showTime = moment(response.data[0].datetime).format("MM/DD/YYYY")
-    
+    var showTime2 = moment(response.data[1].datetime).format("MM/DD/YYYY")
     console.log(`
     Name of Venue: ${response.data[0].venue.name}
     Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.region}
     Date of Event: ${showTime}
     `);
+    console.log(`
+    Name of Venue: ${response.data[1].venue.name}
+    Venue Location: ${response.data[1].venue.city}, ${response.data[1].venue.region}
+    Date of Event: ${showTime2}
+    `);
         });
- 
 
 };
-
 // //THIS IS SPOTIFY====================================================================================================================
 // // * `spotify-this-song`
 // // node liri.js spotify-this-song '<song name here>'
@@ -40,8 +43,6 @@ function playThatFunkyMusic() {
   spotify
   .search({ type: 'track', query: songName })
   .then(function(response) {
-
-    // console.log(response.tracks.items[0].preview_url)
     console.log(
       `
       Artist(s): ${response.tracks.items[0].album.artists[0].name}
@@ -57,19 +58,11 @@ function playThatFunkyMusic() {
 }
 
 //THIS IS OMDB=======================================================================================================================
+function action() {
 
-function movieFunction() {
-// * `movie-this`
-// node liri.js movie-this '<movie name here>'
-// var nodeArgs = process.argv;
-// Create an empty variable for holding the movie name
 var movieName = process.argv.slice(3).join("+")
-
 // Then run a request with axios to the OMDB API with the movie specified
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
-
-// This line is just to help us debug against the actual URL.
-// console.log(queryUrl);
 
 axios.get(queryUrl).then(
   function(response) {
@@ -86,15 +79,14 @@ axios.get(queryUrl).then(
       `
       );
     
-    // console.log(response.data);
+
   })
   .catch(function(error) {
     console.log(error);
   });
 
 };
-
-// * `do-what-it-says`
+// THIS IS do-what-it-says=========================================================================================================
 function doWhatItSays(){
 console.log('do what it says is called')
 fs.readFile("random.txt", "utf8", function(error, data) {
@@ -111,7 +103,6 @@ fs.readFile("random.txt", "utf8", function(error, data) {
   .search({ type: 'track', query: songName })
   .then(function(response) {
 
-    // console.log(response.tracks.items[0].preview_url)
     console.log(
       `
       Artist(s): ${response.tracks.items[0].album.artists[0].name}
@@ -139,7 +130,7 @@ switch (process.argv[2]) {
       break;
     
     case "movie-this":
-      movieFunction()
+      action()
       break;
     
     case "do-what-it-says":
@@ -155,6 +146,4 @@ switch (process.argv[2]) {
       do-what-it-says
       `)
     }
-
-
     // node liri.js movie-this super troopers
