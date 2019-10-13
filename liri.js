@@ -1,3 +1,4 @@
+//Globals variables
 require("dotenv").config();
 var axios = require("axios");
 var moment = require("moment");
@@ -10,38 +11,35 @@ var fs = require("fs");
 
 
 // //THIS IS BANDS======================================================================================================================
-// // * `concert-this`
+// concert-this function 
 function itsShowTime(artistName) {
-  //find a way to add escape character "\" before symbols
-    // var artistName = artistName.slice().join("+");
     var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
-
-    console.log(queryUrl);
-    console.log(artistName);
-
-
     axios.get(queryUrl).then(
     function(response) {
     var showTime = moment(response.data[0].datetime).format("MM/DD/YYYY")
-    var showTime2 = moment(response.data[1].datetime).format("MM/DD/YYYY")
     console.log(`
     Name of Venue: ${response.data[0].venue.name}
     Venue Location: ${response.data[0].venue.city}, ${response.data[0].venue.region}
     Date of Event: ${showTime}
     `);
-    console.log(`
-    Name of Venue: ${response.data[1].venue.name}
-    Venue Location: ${response.data[1].venue.city}, ${response.data[1].venue.region}
-    Date of Event: ${showTime2}
-    `);
-        });
 
+    // response.data.forEach(function(response) {
+    //   var showTime = moment(response.datetime).format("MM/DD/YYYY");
+    //   console.log(
+    //     `
+    //     Name of Venue: ${response.venue.name}
+    //     Venue Location: ${response.venue.city}, ${response.venue.region}
+    //     Date of Event: ${response.showTime}
+    //     `
+    //     );
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 };
 // //THIS IS SPOTIFY====================================================================================================================
-// // * `spotify-this-song`
+// // spotify-this-song function 
 function playThatFunkyMusic(songName) {
-  // console.log("user chose spotify this")
-  // var songName = process.argv.slice(3)
   spotify
   .search({ type: 'track', query: songName})
   .then(function(response) {
@@ -71,11 +69,8 @@ function playThatFunkyMusic(songName) {
   });
 }
 //THIS IS OMDB=======================================================================================================================
-
+// movie-this function 
 function action(movieName) {
-
-// var movieName = movieName.slice(3).join("+")
-// Then run a request with axios to the OMDB API with the movie specified
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 axios.get(queryUrl).then(
@@ -101,8 +96,8 @@ axios.get(queryUrl).then(
 
 };
 // THIS IS do-what-it-says=========================================================================================================
-// do-what-it-says
-function doWhatItSays(){
+// do-what-it-says function
+function doIt(){
 console.log('do what it says is called')
 fs.readFile("random.txt", "utf8", function(error, data) {
 
@@ -130,7 +125,7 @@ switch (method) {
       break;
     
     case "do-what-it-says":
-      doWhatItSays();
+      doIt();
       break;
     
       default: console.log(`
@@ -142,7 +137,7 @@ switch (method) {
       do-what-it-says
       `)
     }
-}
+};
 
 var whatDoYouWant = process.argv.slice(3).join(" ");
 doWhatISay(process.argv[2],whatDoYouWant);

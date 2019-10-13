@@ -29,7 +29,7 @@ Getting Started
 Built With
     Node.js - a JavaScript runtime environment
     Moment - Parse, manipulate, and display dates in javascript.
-    Packages - ????
+    Axios - ????
     Despair - the complete loss or absence of hope
     Spotify - Music API
     Confusion - state of being bewildered or unclear in one's mind about something
@@ -42,6 +42,6 @@ Authors
 
 
 Acknowledgments
-    My wonderfully helpful tutor
+    My wonderfully helpful tutor and TA's
     Being forced by SMU Bootcamp
     Etc. 
