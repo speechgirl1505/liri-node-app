@@ -59,7 +59,7 @@ function itsShowTime(artistName) {
 // // spotify-this-song function
 function playThatFunkyMusic(songName) {
   spotify
-    .search({ type: "track", query: songName })
+    .search({ type: "track", query: songName, limit: 5 })
     .then(function(response) {
       response.tracks.items.forEach(function(song) {
         console.log(
@@ -88,6 +88,9 @@ function playThatFunkyMusic(songName) {
 //THIS IS OMDB=======================================================================================================================
 // movie-this function
 function action(movieName) {
+  if (movieName === "") {
+    movieName = "Mr Nobody"
+  }
   var queryUrl =
     "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
@@ -106,6 +109,7 @@ function action(movieName) {
       Actors: ${response.data.Actors}
       `
       );
+    
     })
     .catch(function(error) {
       console.log(error);
