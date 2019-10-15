@@ -40,15 +40,15 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
     
     When user runs `node liri.js spotify-this-song goddess`
 
-![aSpotify-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Spotify-this")
+[aSpotify-this](<img src="images/spotify-this.png"> "Spotify-this")
     
     When user runs `node liri.js movie-this super troopers`
  
-[Movie-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Movie-this")
+[Movie-this](<img src="images/movie.png"> "Movie-this")
     
     When user runs `node liri.js so-what-it-says`
    
-[Do-what-it-says](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Do-what-it-says")
+[Do-what-it-says](<img src="images/do-what-it-says.png"> "Do-what-it-says")
 
 ## Built With
     Node.js - A JavaScript runtime environment
