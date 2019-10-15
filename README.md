@@ -35,13 +35,17 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 ## Screen Shots/Examples
     When user runs `node liri.js concert-this banks`
-
+    Inline-style: 
+![Concert-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Concert-this")
     When user runs `node liri.js spotify-this-song goddess`
-
+Inline-style: 
+![aSpotify-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Spotify-this")
     When user runs `node liri.js movie-this super troopers`
-
+Inline-style: 
+![Movie-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Movie-this")
     When user runs `node liri.js so-what-it-says`
-    
+    Inline-style: 
+![Do-what-it-says](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Do-what-it-says")
 
 ## Built With
     Node.js - A JavaScript runtime environment
