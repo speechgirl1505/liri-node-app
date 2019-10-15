@@ -1,4 +1,4 @@
-# liri-node-app
+# Liri Node App
 
 1) Goal or objective of project
 2) How to 
@@ -6,11 +6,6 @@
 4) Programs 
 5) Acknowledgments 
 
-link images into readme
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-
-
-# Liri Node App
 
 ## Goal of Project
     In this app we are calling on three different APIs for specific data using Node.js. 
@@ -34,21 +29,21 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 
 ## Screen Shots/Examples
-    When user runs `node liri.js concert-this banks`
+    When user runs `node liri.js concert-this penny and sparrow`
    
 <img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/concert-this.png"/>
     
-    When user runs `node liri.js spotify-this-song goddess`
+    When user runs `node liri.js spotify-this-song eloise`
 
-[Spotify-this](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/spotify-this.png"/> "Spotify-this")
+<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/spotify-this.png"/>
     
     When user runs `node liri.js movie-this super troopers`
  
-[Movie-this](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/movie-this.png"/> "Movie-this")
+<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/movie-this.png"/>
     
     When user runs `node liri.js do-what-it-says`
    
-[Do-what-it-says](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/do-what-it-says.png"/> "Do-what-it-says")
+<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/do-what-it-says.png"/>
 
 ## Built With
     Node.js - A JavaScript runtime environment
