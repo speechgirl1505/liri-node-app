@@ -36,7 +36,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 ## Screen Shots/Examples
     When user runs `node liri.js concert-this banks`
     Inline-style: 
-![Concert-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Concert-this")
+![Concert-this](<img src=images/movie-this.png> "Concert-this")
     When user runs `node liri.js spotify-this-song goddess`
 Inline-style: 
 ![aSpotify-this](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Spotify-this")
