@@ -36,7 +36,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 ## Screen Shots/Examples
     When user runs `node liri.js concert-this banks`
    
-[Concert-this](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/concert-this.png"/> "Concert-this")
+<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/concert-this.png"/>
     
     When user runs `node liri.js spotify-this-song goddess`
 
@@ -46,7 +46,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
  
 [Movie-this](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/movie-this.png"/> "Movie-this")
     
-    When user runs `node liri.js so-what-it-says`
+    When user runs `node liri.js do-what-it-says`
    
 [Do-what-it-says](<img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/do-what-it-says.png"/> "Do-what-it-says")
 
