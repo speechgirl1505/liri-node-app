@@ -2,7 +2,7 @@
 
 1) Goal or objective of project
 2) How to 
-3) Screen shots/explanation of what it does
+3) Screen shots/Examples
 4) Programs 
 5) Acknowledgments 
 
@@ -37,7 +37,7 @@
 
 <img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/spotify-this.png"/>
     
-    When user runs `node liri.js movie-this super troopers`
+    When user runs `node liri.js movie-this this is the end`
  
 <img src="https://github.com/speechgirl1505/liri-node-app/blob/master/images/movie-this.png"/>
     
@@ -55,4 +55,5 @@
 
 
 ## Acknowledgments
-    My wonderfully helpful tutor and TA's 
+    My wonderfully helpful tutor 
+    Two talentedly terrific TA's 
