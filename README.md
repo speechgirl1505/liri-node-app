@@ -12,7 +12,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 # Liri Node App
 
 ## Goal of Project
-    In this app we are calling on three different APIs for specific data using Node.js. The API's being targeted are Spotify, Bands in Town, and OMDB. These will pull information for either songs, concerts, or movies inputed by the user and give specific information back. For concerts you will get back the name of the venue, location of the venue, and date of the event in (MM/DD/YYY) format. For songs you will get the Artist (s), song name, a preview link for the song, and the Album the song is on. For the movie you will get the Title, Release Year, IMDB Ratings, Rotten Tomatoes Ratings, Country produced, Lanuage, Plot, and Actors. 
+In this app we are calling on three different APIs for specific data using Node.js. The API's being targeted are Spotify, Bands in Town, and OMDB. These will pull information for either songs, concerts, or movies inputed by the user and give specific information back. For concerts you will get back the name of the venue, location of the venue, and date of the event in (MM/DD/YYY) format. For songs you will get the Artist (s), song name, a preview link for the song, and the Album the song is on. For the movie you will get the Title, Release Year, IMDB Ratings, Rotten Tomatoes Ratings, Country produced, Lanuage, Plot, and Actors. 
 
 ## Getting Started
     How to install if you clone the repo
